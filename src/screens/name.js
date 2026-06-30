@@ -1,5 +1,6 @@
 import { state, SPECIAL_ROLES } from '../state.js';
 import { goTo } from '../nav.js';
+import { prepare as prepareCard } from './card.js';
 
 export const id = 's-name';
 
@@ -22,7 +23,7 @@ export function render() {
 
   <!-- 콘텐츠 -->
   <div class="scroll" style="display:flex;flex-direction:column;
-    padding: calc(var(--safe-top) + 20px) 26px max(var(--safe-bottom), 28px);">
+    padding: calc(var(--safe-top) + 20px) 26px 0;">
 
     <!-- 상단 브랜딩 -->
     <div style="flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0;padding-bottom:20px;">
@@ -105,5 +106,6 @@ function enter() {
   state.name = name;
   state.team = Math.random() < .5 ? 'pacer' : 'ghost';
   state.role = SPECIAL_ROLES[Math.floor(Math.random() * SPECIAL_ROLES.length)];
+  prepareCard();
   goTo('s-card');
 }
