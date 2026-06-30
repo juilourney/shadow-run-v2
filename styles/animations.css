@@ -1,0 +1,18 @@
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes orb-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%       { transform: translate(6%, 4%) scale(1.08); }
+}
+@keyframes orb-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%       { transform: translate(-5%, -3%) scale(1.06); }
+}
+
+.anim-0 { animation: fadeUp .55s         var(--spring) both; }
+.anim-1 { animation: fadeUp .55s .08s    var(--spring) both; }
+.anim-2 { animation: fadeUp .55s .16s    var(--spring) both; }
+.anim-3 { animation: fadeUp .55s .24s    var(--spring) both; }
+.anim-4 { animation: fadeUp .55s .32s    var(--spring) both; }
